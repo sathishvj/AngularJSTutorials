@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope inheritance</title>
+	<script src="../lib/angular.min.js"></script>
+</head>
+<body ng-app>
+
+	<h5>As a primitive, model variables will be inherited but overriden when assigned.</h5>
+
+	<input type="text" ng-model="info">
+	<div>{{info}}</div>
+
+	<div ng-controller="Controller1">
+		<input type="text" ng-model="info">
+		<div>{{info}}</div>
+	</div>
+
+	<div ng-controller="Controller2">
+		<input type="text" ng-model="info">
+		<div>{{info}}</div>
+	</div>
+
+	<h5>As an object with dot notation, the model variable name acts like a reference (?).</h5>
+
+	<input type="text" ng-model="my.newInfo">
+	<div>{{newInfo}}</div>
+
+	<div ng-controller="Controller1">
+		<input type="text" ng-model="my.newInfo">
+		<div>{{newInfo}}</div>
+	</div>
+
+	<div ng-controller="Controller2">
+		<input type="text" ng-model="my.newInfo">
+		<div>{{newInfo}}</div>
+	</div>
+
+	<script>
+	function Controller1() {
+
+	}
+
+	function Controller2() {
+
+	}
+	</script>
+</body>
+</html>

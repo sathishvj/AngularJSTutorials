@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope in Angular</title>
+	<script src="../lib/angular.min.js"></script>
+	<script>
+	function MyCtrl($scope) {
+		$scope.myData = "This is sample text";
+		$scope.person = {age: "25"};
+		// $scope.person.age = "35";
+	}
+	</script>
+</head>
+<body ng-app>
+
+	<div ng-controller="MyCtrl">
+		Data via $scope is: {{myData}}
+		Person is: {{person}}
+		Person's age is: {{person.age}}
+	</div>
+</body>
+</html>

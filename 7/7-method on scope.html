@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sharing data between controllers</title>
+	<script src="../lib/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="MyController">
+		<input type="text" ng-model="myObj.info">
+		<div>{{doubleUp()}}</div>
+		<div>{{tripleUp(myObj.info)}}</div>
+	</div>
+
+	<script>
+	function MyController($scope) {
+		$scope.myObj = {info: ""};
+
+		$scope.doubleUp = function() {
+			return $scope.myObj.info + $scope.myObj.info;
+		}
+
+		$scope.tripleUp = function(s) {
+			return s + s + s;
+		}
+	}
+
+	</script>
+</body>
+</html>

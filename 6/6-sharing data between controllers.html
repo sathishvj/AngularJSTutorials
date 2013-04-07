@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sharing data between controllers</title>
+	<script src="../lib/angular.min.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="Controller1">
+		<input type="text" ng-model="myObj.info">
+		<div>{{myObj.info}}</div>
+	</div>
+
+	<div ng-controller="Controller2">
+		<input type="text" ng-model="myObj.info">
+		<div>{{myObj.info}}</div>
+	</div>
+
+	<script>
+	var myMod = angular.module("myModule", []);
+	myMod.factory("InfoService", function() {
+		return {info: "Hello world!"};
+	});
+
+	function Controller1($scope, InfoService) {
+		$scope.myObj = InfoService;
+	}
+
+	function Controller2($scope, InfoService) {
+		$scope.myObj = InfoService;
+	}
+
+	</script>
+</body>
+</html>

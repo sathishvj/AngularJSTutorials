@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sharing data between controllers</title>
+	<script src="../lib/angular.min.js"></script>
+</head>
+<body ng-app="myModule">
+
+	<div>Hello world!</div>
+
+	<myhello></myhello>
+
+	<div myhelloattr></div>
+
+	<div class="myhelloclass"></div>
+
+	<script>
+	var myMod = angular.module("myModule", []);
+
+	// Noticed that it does not take upper case characters at all!
+	myMod.directive("myhello", function() {
+		return {
+			restrict: "E",
+			template: "<div>My Hellloooo world!</div>"
+		};
+	});
+
+	myMod.directive("myhelloattr", function() {
+		return {
+			restrict: "A",
+			template: "<div>Hello world from an attribute.</div>"
+		};
+	});
+
+	myMod.directive("myhelloclass", function() {
+		return {
+			restrict: "C",
+			template: "<div>Hello world from a class.</div>"
+		};
+	});
+	</script>
+</body>
+</html>
