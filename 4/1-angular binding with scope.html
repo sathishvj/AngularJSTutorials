@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Data binding in AngularJS</title>
+	<script src="../lib/angular.min.js"></script>
+</head>
+<body ng-app>
+	<!-- with angular -->
+	<div>With AngularJS using two-way binding.</div>
+	<div ng-controller="HelloCtrl">
+		<input type="text" ng-model="myVal">
+		<div>{{myVal}}</div><br>
+	</div>
+</body>
+<script type="text/javascript">
+	function HelloCtrl($scope) {
+		$scope.myVal = "First Value";
+	}
+</script>
+</html>

@@ -12,10 +12,12 @@
 	<div ng:non-bindable>Currency filter syntax: {{ currency_expression | currency[:symbol] }}</div>
 	<div>{{5.5 | currency:"INR "}}</div><br>
 
+	<div ng:non-bindable>date filter syntax: {{ UTC date value | date[:format }}</div>
 	<div>{{1330093479000 | date}}</div>
 	<div>{{1330093479000 | date:"medium"}}</div>
 	<div>{{1330093479000 | date:"yyyy/MM"}}</div><br>
 
+	<div ng:non-bindable>'filter' filter syntax: {{ array | json }}</div>
 	<div ng-init="texts = ['Hello', 'there', 'no', 'over', 'here']">{{texts|filter:'h'}}</div>
 	<div ng-init="numbers = [1, 2, 3, 423, 5]">{{numbers|filter:'3'}}</div>
 	<div ng-init="persons = [{fname: 'Peter', lname: 'Jackson'}, {fname: 'Roger', lname: 'Moore'}]">
@@ -25,28 +27,33 @@
 	</div>
 	<br>
 
+	<div ng:non-bindable>json filter syntax: {{ json text | json }}</div>
 	<div>{{ {"car": "Audi", "make": "4X"} }}</div>
 	<div>{{ {"car": "Audi", "make": "4X"} | json}}</div>
 	<br>
 
+	<div ng:non-bindable>limitTo filter syntax: {{ array | limitTo[:count] }}</div>
+	<div ng-init="numbers = [1, 2, 3, 423, 5]">{{numbers}}</div>
 	<div ng-init="numbers = [1, 2, 3, 423, 5]">{{numbers|limitTo:4}}</div>
 	<br>
 
+	<div ng:non-bindable>Case change filter syntax: {{ string | [lowercase/uppercase] }}</div>
 	<div>{{ "All My TeXt." | lowercase}}</div>
 	<div>{{ "acronym" | uppercase }}</div>
 	<br>
 
+	<div ng:non-bindable>number filter syntax: {{ numeric value | number:[decimal places] }}</div>
 	<div>{{ "3.14159" | number}}</div>
 	<div>{{ "3.14159" | number:0}}</div>
 	<div>{{ "3.14159" | number:2}}</div>
 	<div>{{ "314159.12345" | number}}</div>
 	<br>
 
+	<div ng:non-bindable>orderBy filter syntax: {{ array | orderBy:"[-]fieldName" }}; '-' puts in reverse order.</div>
 	<div ng-init="persons = [{fname: 'Peter', lname: 'Jackson'}, {fname: 'Roger', lname: 'Moore'}]">
 		<div>{{persons |orderBy:"-fname" }}</div>
 		<div>{{persons |orderBy:"lname" }}</div>
 	</div>
-
 
 </body>
 </html>
