@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>A jquery example for updating data</title>
+	<title>Testing scope in AngularJS</title>
+	<script src="../lib/angular.min.js"></script>
 	<script src="../lib/jquery-1.9.1.min.js"></script>
 </head>
-<body >
+<body>
 	<!-- with jquery -->
 	<div>With jQuery using DOM manipulation.</div>
 	<input id="jqText" type="text">
 	<div id="jqDisplay"></div><br>
+
+	<!-- with angular -->
+	<div>With AngularJS using two-way binding.</div>
+	<div ng-app>
+		<input id="aText" type="text" ng-model="myVal">
+		<div id="aDisplay">{{myVal}}</div><br>
+	</div>
 
 	<!-- script with jquery-->
 	<script>
@@ -19,6 +27,9 @@
 		});
 	});
 	</script>
+
+	<!-- script with angular -->
+	<script></script>
 
 </body>
 </html>
