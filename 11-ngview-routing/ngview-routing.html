@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sharing data between controllers</title>
+	<script src="../lib/angular-1.2.9/angular.min.js"></script>
+	<script src="../lib/angular-1.2.9/angular-route.min.js"></script>
+</head>
+<body ng-app>
+	<script>
+	angular.module('myModule', ['ngRoute'], 
+		function($routeProvider, $locationProvider) {
+			$routeProvider.when('/view1', {
+				template: '<h1>Hello from View1</h1>'
+			});
+
+			$routeProvider.when('/view2', {
+				template: '<h1>Hello from View2</h1>'
+			});
+		});
+	</script>
+
+	<div ng-view></div> 
+</body>
+</html>

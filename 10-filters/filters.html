@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sharing data between controllers</title>
+	<script src="../lib/angular-1.2.9/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="MyController">
+		<div ng-repeat="person in data | filter: {age : 25}">
+			<p>{{person.name}} is {{person.age}} years old.</p>	
+		</div>
+		<hr>
+		<input type="text" ng-model="pattern">
+		<div ng-repeat="person in data | filter: {name : pattern}">
+			<p>{{person.name}} is {{person.age}} years old.</p>	
+		</div>
+	</div>
+
+	<script>
+	function MyController($scope) {
+		$scope.data =  [
+			{name: "John", age: "25" },
+			{name: "Mary", age: "24" },
+			{name: "Rahul", age: "20" },
+			{name: "Vijay", age: "30" }
+		];
+	}
+	</script>
+</body>
+</html>
