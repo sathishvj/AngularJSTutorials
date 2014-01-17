@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sharing data between controllers</title>
+	<script src="../lib/angular-1.2.9/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="MyController">
+		<input type="text" ng-model="myObj">
+		<input type="button" ng-click="myFunction(myObj)" value="Click Me">
+		<p>Result: {{myresult}}</p>
+	</div>
+
+	<script>
+	function MyController($scope) {
+		$scope.myresult = "";
+
+		$scope.myFunction = function(s) {
+			alert("Within myFunction");
+			$scope.myresult = s + "-abcd";
+		}
+	}
+	</script>
+</body>
+</html>
