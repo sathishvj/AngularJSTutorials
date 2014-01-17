@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Scope in Angular</title>
-	<script src="../lib/angular.min.js"></script>
+	<script src="../lib/angular-1.2.9/angular.min.js"></script>
 	<script>
 	function MyCtrl($scope) {
 		$scope.myData = "This is sample text";
@@ -15,9 +14,9 @@
 <body ng-app>
 
 	<div ng-controller="MyCtrl">
-		Data via $scope is: {{myData}}
-		Person is: {{person}}
-		Person's age is: {{person.age}}
+		Data via $scope is: {{myData}} <br>
+		Person is: {{person}} <br>
+		Person's age is: {{person.age}} <br>
 	</div>
 </body>
 </html>
