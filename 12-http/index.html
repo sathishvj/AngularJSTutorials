@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="lib/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="MyController">
+		<input type="button" value="Get data" ng-click="getData()">
+		<div ng-repeat="one in data">
+			<p>{{one.lastName}}, {{one.firstName}}</p>
+		</div>
+	</div>
+
+	<script>
+	function MyController($scope, $http) {
+		$scope.getData = function() {
+			$http.get("/test").success(function(d) {
+				$scope.data = d;
+			}).
+			error(function(msg) {
+				alert("There was an error: " + msg);
+			});
+		};
+	}
+	</script>
+</body>
+</html>
