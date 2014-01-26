@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sharing data between controllers</title>
+	<script src="../lib/angular-1.2.9/angular.min.js"></script>
+</head>
+<body ng-app="MyModule">
+	<input type="text" ng-model="myInfo">
+	<div>{{ myInfo | crazycase }}</div>
+
+	<script>
+	var myMod = angular.module("MyModule", []);
+
+	// Make your own crazycase filter where alternate letters are capital and small.
+	</script>
+</body>
+</html>
