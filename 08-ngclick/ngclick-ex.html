@@ -4,14 +4,33 @@
 	<meta charset="UTF-8">
 	<title>Sharing data between controllers</title>
 	<script src="../lib/angular-1.2.9/angular.min.js"></script>
+	<style>
+		#myDiv {
+			height: 300px;
+			width: 300px;
+			border: 1px dashed lightgrey;
+		}
+
+		.myGreen {
+			background-color: green;
+		}
+
+		.myRed {
+			background-color: red;
+		}
+	</style>
 </head>
 <body ng-app>
 	<div ng-controller="MyController">
 		<!-- Create a div of size 300x300.  On mouseover on the div, change its color from green to red. -->
+
+		<div id="myDiv" class="{{myClass}}">
+		</div>
 	</div>
 
 	<script>
 	function MyController($scope) {
+		$scope.myClass = "myGreen";
 	}
 	</script>
 </body>
